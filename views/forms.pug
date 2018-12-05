@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1.form-header Contact Us
+  .container.form-container
+    .col
+      .col-4
+        if missingRequiredFields != ""
+          .alert.alert-danger <strong</strong>#{missingRequiredFields}
+        if invalidemail != ""
+          .alert.alert-danger <strong</strong>#{invalidemail}
+        form(method='POST', action='/formsubmission')
+          .form-group
+            label(for='firstname') First Name*
+            if (firstname)
+              input#firstname.form-control(type='text', name='firstname' value=`${firstname}`)
+            else
+              input#firstname.form-control(type='text', placeholder='Elon', name='firstname')
+          .form-group
+            label(for='lastname') Last Name*
+            if (lastname)
+              input#lastname.form-control(type='text', name='lastname' value=`${lastname}`)
+            else
+              input#lastname.form-control(type='text', placeholder='Musk', name='lastname')
+          .form-group
+            label(for='email') Email*
+            if (email)
+              input#email.form-control(type='text', name='email' value=`${email}`)
+            else
+              input#email.form-control(type='text', placeholder='emusk@tesla.com', name='email')
+          .form-group
+            label(for='comments') Comments*
+            if (comments)
+              textarea#comments.form-control(type='text', placeholder='Comments', name='comments') #{comments}
+            else
+              textarea#comments.form-control(type='text', placeholder='Just looking to connect!', name='comments')
+          button.btn.btn-primary(type='submit') Submit
