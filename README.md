@@ -1,6 +1,6 @@
 # HubSpot Forms API Code Demo
 
-## Code to Use HubSpot's Forms API Written in Node.Js
+## Submitting HubSpot Forms Data using Express and Node
 
 ### Description
 This is an example of HubSpot's Forms API (see documentation) using Express and Node.Js. This includes a basic Landing Page with a bootstrap form and a Thank You page; both of which are rendered using the Pug template engine. Upon Form Submission, the data is posted to a HubSpot portal giving it full functionality of a HubSpot embedded form. 
